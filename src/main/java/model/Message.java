@@ -10,5 +10,4 @@ public class Message {
     private String email;
     private String orderReference;
     private String message;
-
 }

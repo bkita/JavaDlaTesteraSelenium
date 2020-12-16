@@ -47,7 +47,7 @@ public class ContactUsTest extends BaseTest {
 
     @Test
     @Order(3)
-    public void shouldSendContactUsFormWithValidData(){
+    public void shouldSendContactUsFormWithValidData() {
         topMenuPage.clickOnContactUsLink();
 
         Message message = new Message();
