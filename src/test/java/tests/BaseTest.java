@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
 
-    protected static final String BASE_URL = "http://automationpractice.com/index.php";
+    protected static final String BASE_URL = "http://automationpractice.pl/index.php";
 
     protected WebDriver driver;
 

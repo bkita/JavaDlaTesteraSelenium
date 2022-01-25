@@ -2,7 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.PopularItemsPage;
+import pages.BestsellersItemsPage;
 import utils.PageTitleUtils;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class HomePageTest extends BaseTest {
 
-    private PopularItemsPage popularItemsPage;
+    private BestsellersItemsPage bestsellersItemsPage;
 
     @BeforeEach
     public void setupTest() {
@@ -20,12 +20,13 @@ public class HomePageTest extends BaseTest {
         driver.get(BASE_URL);
         assertThat(driver.getTitle()).isEqualTo(PageTitleUtils.HOME_PAGE_TITLE);
 
-        popularItemsPage = new PopularItemsPage(driver);
+        bestsellersItemsPage = new BestsellersItemsPage(driver);
     }
 
     @Test
-    public void shouldSeePopularItemsOnHomePage() {
-        List<String> productNames = popularItemsPage.getProductNames();
+    public void shouldSeeItemsOnBestsellersPage() {
+        bestsellersItemsPage.clickOnBestsellersButton();
+        List<String> productNames = bestsellersItemsPage.getBestsellersNames();
 
         List<String> productsWithEmptyName = productNames.stream()
                 .filter(el -> el.isEmpty())
